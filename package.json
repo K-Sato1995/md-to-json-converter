@@ -1,0 +1,15 @@
+{
+  "name": "md-to-json-converter",
+  "version": "0.0.1",
+  "description": "Converts your markdown files to a single json file so that you can use it as a static api.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "build": "tsc"
+  },
+  "author": "K-Sato1995",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.6.2"
+  }
+}
