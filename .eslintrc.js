@@ -1,12 +1,15 @@
+/* eslint-disable */
 module.exports = {
   'parser': '@typescript-eslint/parser',
-  'plugins': [
-    'eslint-plugin-no-jp'
-  ],
   'extends': [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:jest/recommended',
+  ],
+  'ignorePatterns': ['**/dist/, **/example/'],
+  'plugins': [
+    'eslint-plugin-no-jp',
+    '@typescript-eslint'
   ],
   'rules': {
     'no-jp/no-jp-identifier': 2,

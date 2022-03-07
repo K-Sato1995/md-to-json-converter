@@ -6,9 +6,9 @@
     "typescript",
     "typescriptreact",
   ],
-  "eslint.workingDirectories": [
-    "./lib"
-  ],
+  // "eslint.workingDirectories": [
+  //   "./lib"
+  // ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   }
