@@ -40,7 +40,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.converteMdToJSON = void 0;
-var config_1 = require("./config");
 var remarkable_1 = require("remarkable");
 var utils_1 = require("./utils");
 var builder_1 = require("./builder");
@@ -52,7 +51,7 @@ var converteMdToJSON = function (options) { return __awaiter(void 0, void 0, voi
         contentPath = options.contentPath, outputPath = options.outputPath, raw = options.raw;
         parser = new remarkable_1.Remarkable('default').use(remarkable_meta_1.default);
         if (options.remarkableOptions) {
-            parser.set(config_1.remarkableDefaultConfig);
+            parser.set(options.remarkableOptions);
         }
         doseParse = raw || false;
         mdFiles = (0, utils_1.getMDFiles)(contentPath);

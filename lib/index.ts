@@ -1,5 +1,3 @@
-
-import { remarkableDefaultConfig } from './config'
 import { Remarkable  } from 'remarkable'
 import { writeJSON, getMDFiles } from './utils'
 import { constructJSONObj } from './builder'
@@ -25,7 +23,7 @@ export const converteMdToJSON = async (options: MdToJSONConverterOptions): Promi
   const parser = new Remarkable('default').use(meta)
 
   if(options.remarkableOptions) {
-    parser.set(remarkableDefaultConfig)
+    parser.set(options.remarkableOptions)
   }
 
   const doseParse = raw || false
