@@ -19,18 +19,26 @@ interface MdToJSONConverterOptions {
 }
 
 export const converteMdToJSON = async (options: MdToJSONConverterOptions): Promise<JsonObj> => {
-  const { contentPath, outputPath } = options
-  const parser = new Remarkable('default').use(meta)
+  validateOptions(options)
 
-  // if(options.raw) {}
+  const { contentPath, outputPath, raw } = options
+  const parser = new Remarkable('default').use(meta)
 
   if(options.remarkableOptions) {
     parser.set(remarkableDefaultConfig)
   }
 
+  const doseParse = raw || false
   const mdFiles = getMDFiles(contentPath)
-  const jsonObj = constructJSONObj(parser as RemarkableParser, mdFiles)
+  const jsonObj = constructJSONObj(parser as RemarkableParser, mdFiles, doseParse)
 
-  writeJSON(outputPath, {})
+  writeJSON(outputPath, jsonObj)
   return jsonObj
+}
+
+
+const validateOptions = (options: MdToJSONConverterOptions) => {
+  const { contentPath, outputPath } = options
+  if(!contentPath) throw new Error('\'contentPath\' is required')
+  if(!outputPath) throw new Error('\'outputPath\' is required')
 }
