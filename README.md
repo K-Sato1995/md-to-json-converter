@@ -20,10 +20,12 @@ The code below displays a simple usecase of this module.
 
 ```js
 import { converteMdToJSON } from 'md-to-json-converter'
-import path from 'path'
+import path from 'path' // not required
 
 const __dirname = path.resolve();
+// Path to the director where your markdown files live.
 const contentPath = path.join(__dirname, './example/content')
+// The path to the JSON file you want to export the result to.
 const outputPath = path.join(__dirname, './example/output/posts.json')
 
 // Returns Promise.
