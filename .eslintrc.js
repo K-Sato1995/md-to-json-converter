@@ -6,7 +6,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:jest/recommended',
   ],
-  'ignorePatterns': ['**/dist/, **/example/'],
+  'ignorePatterns': ['**/dist/'],
   'plugins': [
     'eslint-plugin-no-jp',
     '@typescript-eslint'
