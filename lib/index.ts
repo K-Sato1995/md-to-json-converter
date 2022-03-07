@@ -20,7 +20,7 @@ interface MdToJSONConverterOptions {
 
 export const converteMdToJSON = async (options: MdToJSONConverterOptions): Promise<JsonObj> => {
   const { contentPath, outputPath } = options
-  const parser = new Remarkable().use(meta)
+  const parser = new Remarkable('default').use(meta)
 
   // if(options.raw) {}
 
