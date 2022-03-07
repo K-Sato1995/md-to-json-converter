@@ -6,9 +6,11 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
+    "prepublish": "npm run build",
     "build": "rm -rf dist/ && tsc",
     "lint": "eslint --ext=ts lib"
   },
+  "keywords": ["markdown to json", "static api"],
   "author": "K-Sato1995",
   "license": "MIT",
   "devDependencies": {
